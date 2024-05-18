@@ -1,13 +1,14 @@
 [Unit]
-Description=Internet Connectivity Check Service
-After=network.target
+Description=Internet Connectivity Monitoring Service
+After=network-online.target
 
 [Service]
-ExecStart=/usr/local/bin/check_internet_with_downtime_seconds.sh
+Type=simple
+ExecStart=/home/gkns/internet_monitor/internet_monitor.sh
+WorkingDirectory=/home/gkns/internet_monitor/
+StandardOutput=inherit
+StandardError=inherit
 Restart=always
-User=your_username
-StandardOutput=journal
-StandardError=journal
 
 [Install]
 WantedBy=multi-user.target

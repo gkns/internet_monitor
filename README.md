@@ -1,7 +1,8 @@
 # Internet Connection Monitor
 
 This is a simple *internet-connection* monitoring script for raspberry pi.
-I run this on a Raspberry Pi4 Model-B.
+I run this on a Raspberry Pi4 Model-B. 
+(A bit of context: I find myself with a pesky connection of late, and I need this to talk to the ISP.)
 
 I run this as a systemd service using the given systemd unit file.
 

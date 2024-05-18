@@ -1,0 +1,13 @@
+[Unit]
+Description=Internet Connectivity Check Service
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/check_internet_with_downtime_seconds.sh
+Restart=always
+User=your_username
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

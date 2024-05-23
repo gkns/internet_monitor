@@ -22,11 +22,16 @@ Then remove the gatway:
 
 `sudo ip route delete default via <orig-default-gateway-ip> dev <ethernet-iface-typically-eth0>`
 
-Then add the new route:
-
-`sudo ip route delete default via <another-reachable-ip-on-your-nw> dev eth0`
+Eg: `sudo ip route delete default via 192.168.1.254 dev eth0`
 
 The log file should now show: 'Internet is DOWN.'
+
+Remember to restore the default route:
+
+`sudo ip route add default via <another-reachable-ip-on-your-nw> dev eth0`
+
+Eg: `sudo ip route add default via 192.168.1.254 dev eth0`
+
 
 
 # Systemd service configuration
